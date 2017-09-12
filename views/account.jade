@@ -1,0 +1,12 @@
+extends layout
+
+block content
+
+	p
+		img(src=user.photos[0].value)
+	p.
+		ID: #{user.id}
+	p.
+		Username: #{user.username}
+	p.
+		Name: #{user.displayName}

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+	unless user
+		h2 Welcome! Please log in.
+		a(href="/auth/vk") Log in with VK
+	else
+		h2 Hello, #{user.displayName}
+		p VK ID: #{user.id}
+		p VK Username: #{user.username}
+		p VK Name: #{user.displayName}
+		p
+			pre
+				JSON.stringify(user, null, 2)
+		p
+			a(href="/logout") Log out
